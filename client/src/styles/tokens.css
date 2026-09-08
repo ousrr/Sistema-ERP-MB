@@ -1,0 +1,24 @@
+:root {
+  --erp-sidebar-width: 240px;
+  --erp-header-height: 64px;
+
+  --erp-color-sidebar: #0f1f3d;
+  --erp-color-primary: #2563eb;
+  --erp-color-bg: #f6f8fb;
+  --erp-color-surface: #ffffff;
+  --erp-color-border: #e5e7eb;
+  --erp-color-text: #172033;
+  --erp-color-muted: #64748b;
+
+  --erp-radius-sm: 6px;
+  --erp-radius-md: 10px;
+  --erp-radius-lg: 14px;
+
+  --erp-space-1: 4px;
+  --erp-space-2: 8px;
+  --erp-space-3: 12px;
+  --erp-space-4: 16px;
+  --erp-space-5: 20px;
+  --erp-space-6: 24px;
+  --erp-space-8: 32px;
+}
