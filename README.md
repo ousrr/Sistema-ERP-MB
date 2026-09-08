@@ -1,7 +1,5 @@
 # ERP - Base visual y componentes reutilizables
 
-Esta entrega NO es el sistema funcional.
-
 ## Qué contiene
 - La estructura oficial del proyecto.
 - El cascarón visual:
@@ -12,18 +10,6 @@ Esta entrega NO es el sistema funcional.
   - página
 - Componentes presentacionales reutilizables básicos.
 - Tokens visuales y estilos base.
-
-## Qué NO contiene
-- Router funcional.
-- API.
-- Node/Express implementado.
-- Oracle conectado.
-- Packages.
-- CRUD.
-- Catálogos.
-- Datos simulados.
-- Lógica de negocio.
-- Integración frontend/backend.
 
 ## Objetivo
 Servir como base visual y de estandarización para que cada grupo implemente su módulo sin volver a diseñar botones, campos, tablas o contenedores comunes.
