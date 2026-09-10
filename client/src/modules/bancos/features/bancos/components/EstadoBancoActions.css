@@ -1,0 +1,170 @@
+/* =====================================================
+   BOTÓN DE ESTADO
+===================================================== */
+
+.estado-action {
+  display: inline-flex;
+}
+
+
+.estado-action .ui-icon-button {
+  width: 31px;
+  height: 31px;
+
+  background: #ffffff;
+}
+
+
+.estado-action .ui-icon-button svg {
+  width: 15px;
+  height: 15px;
+}
+
+
+.estado-action--danger .ui-icon-button {
+  color: #c2414b;
+  border-color: #e5aeb3;
+}
+
+
+.estado-action--danger .ui-icon-button:hover:not(:disabled) {
+  background: #fff5f5;
+}
+
+
+.estado-action--success .ui-icon-button {
+  color: #278245;
+  border-color: #9fd5af;
+}
+
+
+.estado-action--success .ui-icon-button:hover:not(:disabled) {
+  background: #f1fbf4;
+}
+
+
+/* =====================================================
+   DIÁLOGO DE CONFIRMACIÓN
+===================================================== */
+
+.estado-dialog-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1100;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 20px;
+
+  background: rgba(15, 23, 42, 0.35);
+}
+
+
+.estado-dialog {
+  width: min(460px, 100%);
+
+  padding: 22px;
+
+  border: 1px solid #e3e8ef;
+  border-radius: 12px;
+
+  background: #ffffff;
+
+  box-shadow:
+    0 24px 70px rgba(15, 23, 42, 0.18);
+}
+
+
+.estado-dialog__header {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+}
+
+
+.estado-dialog__header h2 {
+  margin: 0;
+
+  color: #172033;
+
+  font-size: 18px;
+  font-weight: 700;
+}
+
+
+.estado-dialog__header p {
+  margin: 7px 0 0;
+
+  color: #667085;
+
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+
+.estado-dialog__icon {
+  width: 34px;
+  height: 34px;
+
+  flex: 0 0 auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  font-weight: 700;
+}
+
+
+.estado-dialog__icon--danger {
+  background: #fff0f1;
+  color: #c2414b;
+}
+
+
+.estado-dialog__icon--success {
+  background: #ebf9ef;
+  color: #278245;
+}
+
+
+.estado-dialog__error {
+  margin-top: 18px;
+
+  padding: 11px 13px;
+
+  border: 1px solid #f0b7bc;
+  border-radius: 8px;
+
+  background: #fff5f5;
+
+  color: #b4232c;
+
+  font-size: 12px;
+}
+
+
+.estado-dialog__actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+
+  margin-top: 22px;
+}
+
+
+@media (max-width: 520px) {
+
+  .estado-dialog__actions {
+    flex-direction: column-reverse;
+  }
+
+
+  .estado-dialog__actions .ui-button {
+    width: 100%;
+  }
+}
