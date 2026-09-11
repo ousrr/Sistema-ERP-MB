@@ -1,0 +1,668 @@
+/* =========================================================
+   MB_CHEQUERA — réplica visual de la maqueta aprobada
+   Todo está acotado a la pantalla de Chequeras.
+========================================================= */
+
+body.chequeras-route .erp-header {
+  display: none;
+}
+
+body.chequeras-route .erp-layout__content {
+  background: #f8fafc;
+}
+
+body.chequeras-route .module-layout__navigation {
+  height: 58px;
+  display: flex;
+  align-items: flex-end;
+  padding: 0 28px;
+  border-bottom: 1px solid #e2e8f0;
+  background: #ffffff;
+}
+
+body.chequeras-route .module-tabs {
+  height: 58px;
+  gap: 24px;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  align-items: center;
+}
+
+body.chequeras-route .module-tabs__item {
+  height: 58px;
+  display: inline-flex;
+  align-items: center;
+  padding: 1px 4px 0;
+  color: #64748b;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+body.chequeras-route .module-tabs__item:first-child {
+  color: #2563eb;
+  font-weight: 600;
+}
+
+body.chequeras-route .module-tabs__item:first-child::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 2px;
+  border-radius: 2px;
+  background: #2563eb;
+}
+
+body.chequeras-route .page-container {
+  padding: 18px 28px 30px;
+}
+
+body.chequeras-route .erp-sidebar__item--active::after {
+  content: "⌄";
+  margin-left: auto;
+  color: #cbd5e1;
+  font-size: 13px;
+}
+
+.bancos-sidebar-extension {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  padding: 0 0 4px 27px;
+}
+
+.bancos-sidebar-extension__item {
+  width: 100%;
+  min-height: 28px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 6px 10px;
+  border: 0;
+  border-radius: 7px;
+  background: transparent;
+  color: #94a3b8;
+  font-size: 11px;
+  font-weight: 400;
+  text-align: left;
+  cursor: pointer;
+}
+
+.bancos-sidebar-extension__item:hover {
+  color: #e2e8f0;
+  background: #172033;
+}
+
+.bancos-sidebar-extension__item--active {
+  color: #ffffff;
+  background: #1e3655;
+}
+
+.bancos-sidebar-extension__dot {
+  width: 3px;
+  height: 3px;
+  flex: 0 0 3px;
+  border-radius: 50%;
+  background: currentColor;
+}
+
+.chequeras-screen {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.chequeras-page-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 18px;
+}
+
+.chequeras-page-header h2 {
+  margin: 0;
+  color: #172033;
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.chequeras-page-header p {
+  margin: 4px 0 0;
+  color: #7b8798;
+  font-size: 11px;
+  line-height: 1.45;
+}
+
+.chequeras-page-header__actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.chequeras-search {
+  width: 230px;
+}
+
+.chequeras-search .form-search {
+  height: 34px;
+  padding-left: 34px;
+  border-color: #e2e8f0;
+  border-radius: 8px;
+  background: #ffffff;
+  font-size: 11px;
+}
+
+.chequeras-notification {
+  position: relative;
+  width: 34px;
+  height: 34px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  background: #ffffff;
+  color: #64748b;
+  cursor: pointer;
+}
+
+.chequeras-notification span {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  width: 6px;
+  height: 6px;
+  border: 1.5px solid #ffffff;
+  border-radius: 50%;
+  background: #ef4444;
+}
+
+.chequeras-summary-row {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 18px;
+}
+
+.chequeras-kpis {
+  display: grid;
+  grid-template-columns: repeat(2, 230px);
+  gap: 12px;
+}
+
+.chequeras-kpis .ui-card {
+  min-height: 78px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 14px;
+  border-color: #e4e9f0;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.03);
+}
+
+.chequeras-kpi-icon {
+  width: 38px;
+  height: 38px;
+  flex: 0 0 38px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+}
+
+.chequeras-kpi-icon--green {
+  color: #17a769;
+  background: #ddf8ec;
+}
+
+.chequeras-kpi-icon--blue {
+  color: #2563eb;
+  background: #e4edff;
+}
+
+.chequeras-kpi-copy {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.chequeras-kpi-copy > span {
+  color: #6b7788;
+  font-size: 10px;
+  line-height: 1.2;
+}
+
+.chequeras-kpi-copy strong {
+  margin-top: 1px;
+  color: #172033;
+  font-size: 20px;
+  line-height: 1.05;
+}
+
+.chequeras-kpi-copy small {
+  margin-top: 3px;
+  color: #9aa5b5;
+  font-size: 9px;
+  white-space: nowrap;
+}
+
+.chequeras-main-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.chequeras-filter-wrap {
+  position: relative;
+}
+
+.chequeras-filter-button.ui-button,
+.chequeras-register-button.ui-button {
+  min-height: 34px;
+  height: 34px;
+  border-radius: 7px;
+  padding: 7px 13px;
+  font-size: 11px;
+}
+
+.chequeras-filter-button.ui-button {
+  background: #ffffff;
+  border-color: #dbe2ea;
+  color: #566276;
+}
+
+.chequeras-register-button.ui-button {
+  padding-inline: 16px;
+  box-shadow: 0 2px 5px rgba(37, 99, 235, 0.16);
+}
+
+.chequeras-filter-menu {
+  position: absolute;
+  top: calc(100% + 6px);
+  right: 0;
+  z-index: 30;
+  width: 150px;
+  padding: 5px;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  background: #ffffff;
+  box-shadow: 0 12px 30px rgba(15, 23, 42, 0.12);
+}
+
+.chequeras-filter-option {
+  width: 100%;
+  padding: 7px 9px;
+  border: 0;
+  border-radius: 6px;
+  background: transparent;
+  color: #475569;
+  font-size: 11px;
+  text-align: left;
+  cursor: pointer;
+}
+
+.chequeras-filter-option:hover,
+.chequeras-filter-option--active {
+  color: #1d4ed8;
+  background: #eff6ff;
+}
+
+.chequeras-table-card {
+  overflow: hidden;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  background: #ffffff;
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.025);
+}
+
+.chequeras-table-card .table-shell {
+  overflow-x: auto;
+  border: 0;
+  border-radius: 0;
+}
+
+.chequeras-table-card .data-table {
+  min-width: 920px;
+}
+
+.chequeras-table-card .data-table thead th {
+  height: 36px;
+  padding: 9px 12px;
+  border-bottom: 1px solid #e9edf3;
+  background: #fbfcfe;
+  color: #778397;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.chequeras-table-card .data-table tbody td {
+  height: 41px;
+  padding: 8px 12px;
+  border-bottom: 1px solid #edf1f5;
+  color: #344054;
+  font-size: 10px;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+
+.chequeras-table-card .data-table tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+.chequeras-table-card .data-table tbody tr:hover {
+  background: #fbfdff;
+}
+
+.chequera-account-name {
+  display: block;
+  max-width: 230px;
+  overflow: hidden;
+  color: #253044;
+  font-size: 10px;
+  font-weight: 600;
+  text-overflow: ellipsis;
+}
+
+.chequera-account-number {
+  display: block;
+  margin-top: 2px;
+  color: #8995a7;
+  font-size: 9px;
+}
+
+.chequera-number {
+  font-variant-numeric: tabular-nums;
+}
+
+.chequera-status .ui-badge {
+  min-width: 50px;
+  justify-content: center;
+  padding: 3px 7px;
+  border: 0;
+  font-size: 9px;
+  font-weight: 600;
+}
+
+.chequera-status--activa .ui-badge {
+  color: #14965c;
+  background: #dcf8e9;
+}
+
+.chequera-status--borrador .ui-badge {
+  color: #2f6fcc;
+  background: #e4f0ff;
+}
+
+.chequera-status--agotada .ui-badge {
+  color: #d34646;
+  background: #fde7e7;
+}
+
+.chequera-status--inactiva .ui-badge {
+  color: #697586;
+  background: #eef1f5;
+}
+
+.chequera-row-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 5px;
+}
+
+.chequera-row-actions .ui-icon-button {
+  width: 25px;
+  height: 25px;
+  border-radius: 7px;
+  color: #7f8b9c;
+  border-color: #e7ebf0;
+}
+
+.chequera-row-actions .ui-icon-button:hover:not(:disabled) {
+  color: #344054;
+  background: #f8fafc;
+}
+
+.chequera-delete-action .ui-icon-button:not(:disabled) {
+  color: #dc5a5a;
+}
+
+.chequera-delete-action .ui-icon-button:hover:not(:disabled) {
+  border-color: #f2c8c8;
+  background: #fff5f5;
+  color: #c43c3c;
+}
+
+.chequera-row-actions .ui-icon-button:disabled {
+  cursor: not-allowed;
+  opacity: 0.35;
+}
+
+.chequeras-table-footer {
+  min-height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  padding: 7px 12px;
+  border-top: 1px solid #edf1f5;
+  color: #8a96a8;
+  font-size: 9px;
+}
+
+.chequeras-pagination-controls {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.chequeras-pagination-controls > button {
+  width: 26px;
+  height: 26px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+  background: #ffffff;
+  color: #778397;
+  cursor: pointer;
+}
+
+.chequeras-pagination-controls > button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.chequeras-pagination-controls .chequeras-page-number {
+  border-color: #2563eb;
+  background: #2563eb;
+  color: #ffffff;
+  font-size: 10px;
+  font-weight: 600;
+}
+
+.chequeras-page-size {
+  width: 105px;
+  margin-left: 5px;
+}
+
+.chequeras-page-size .form-select {
+  height: 27px;
+  min-height: 27px;
+  padding: 3px 22px 3px 8px;
+  border-radius: 6px;
+  color: #657186;
+  font-size: 9px;
+}
+
+.chequeras-loading {
+  padding: 42px;
+  color: #78859a;
+  font-size: 11px;
+  text-align: center;
+}
+
+.chequeras-alert .feedback-alert {
+  padding: 10px 12px;
+  font-size: 11px;
+}
+
+.chequeras-alert--success .feedback-alert {
+  border-color: #bbf0d3;
+  background: #f0fdf6;
+  color: #166534;
+}
+
+.chequeras-dialog-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 1500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  background: rgba(15, 23, 42, 0.44);
+}
+
+.chequeras-dialog {
+  position: relative;
+  width: 100%;
+  max-width: 410px;
+  padding: 24px;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  background: #ffffff;
+  box-shadow: 0 24px 60px rgba(15, 23, 42, 0.24);
+}
+
+.chequeras-dialog--detail {
+  max-width: 450px;
+}
+
+.chequeras-dialog__icon {
+  width: 40px;
+  height: 40px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 14px;
+  border-radius: 50%;
+}
+
+.chequeras-dialog__icon--danger {
+  color: #dc2626;
+  background: #fee2e2;
+}
+
+.chequeras-dialog h3 {
+  margin: 0;
+  color: #172033;
+  font-size: 18px;
+}
+
+.chequeras-dialog > p {
+  margin: 7px 0 18px;
+  color: #64748b;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.chequeras-dialog__data {
+  display: grid;
+  grid-template-columns: 95px 1fr;
+  gap: 8px 12px;
+  padding: 13px;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  background: #f8fafc;
+  font-size: 11px;
+}
+
+.chequeras-dialog__data span {
+  color: #7b8798;
+}
+
+.chequeras-dialog__data strong {
+  color: #344054;
+}
+
+.chequeras-dialog__actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 9px;
+  margin-top: 20px;
+}
+
+.chequeras-dialog__close {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  width: 30px;
+  height: 30px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  border: 0;
+  border-radius: 7px;
+  background: transparent;
+  color: #64748b;
+  cursor: pointer;
+}
+
+.chequeras-dialog__close:hover {
+  background: #f1f5f9;
+}
+
+@media (max-width: 980px) {
+  .chequeras-summary-row {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .chequeras-main-actions {
+    justify-content: flex-end;
+  }
+}
+
+@media (max-width: 720px) {
+  body.chequeras-route .page-container {
+    padding: 16px;
+  }
+
+  .chequeras-page-header,
+  .chequeras-summary-row {
+    flex-direction: column;
+  }
+
+  .chequeras-page-header__actions,
+  .chequeras-search,
+  .chequeras-kpis {
+    width: 100%;
+  }
+
+  .chequeras-kpis {
+    grid-template-columns: 1fr;
+  }
+
+  .chequeras-main-actions {
+    width: 100%;
+    justify-content: stretch;
+  }
+
+  .chequeras-main-actions > * {
+    flex: 1;
+  }
+}

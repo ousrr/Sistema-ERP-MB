@@ -1,0 +1,5 @@
+-- Persona 4 - Secuencia: SEQ_MB_CHEQUERA
+-- Extraída del esquema ERP_BANCOS exportado el 2026-09-11.
+-- START WITH conserva el siguiente valor existente en el esquema exportado.
+
+CREATE SEQUENCE  "SEQ_MB_CHEQUERA"  MINVALUE 1 MAXVALUE 9999999999999999999999999999 INCREMENT BY 1 START WITH 5 NOCACHE  NOORDER  NOCYCLE  NOKEEP  NOSCALE  GLOBAL ;
