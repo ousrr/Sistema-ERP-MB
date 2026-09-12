@@ -1,5 +1,5 @@
 import oracledb from 'oracledb';
-import { env } from '../../../config/env.js';
+import { getOracleConnection } from '../../../config/oracle.js';
 
 export interface FormatoImportacionRow {
   formatoId: number;
@@ -68,11 +68,7 @@ export interface ActualizarMapeoInput {
 }
 
 async function getConnection() {
-  return oracledb.getConnection({
-    user: env.database.user,
-    password: env.database.password,
-    connectString: env.database.connectString,
-  });
+  return getOracleConnection();
 }
 
 async function readFormatoCursor(
