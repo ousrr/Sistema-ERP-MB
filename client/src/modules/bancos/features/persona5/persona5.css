@@ -1,0 +1,46 @@
+/* Feature-local styles. Shared components, layouts and global tokens remain unchanged. */
+body.persona5-route .erp-header { display: none; }
+.p5-page { width: 100%; min-width: 0; font-size: 14px; color: #334155; }
+.p5-breadcrumb { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 24px; color: #64748b; font-size: 12px; }
+.p5-breadcrumb strong { color: #334155; }
+.p5-title-row { display: flex; align-items: flex-start; justify-content: space-between; gap: 24px; margin-bottom: 22px; }
+.p5-title-row h1 { margin: 0; color: #0f172a; font-size: 22px; font-weight: 700; }
+.p5-title-row p { margin: 6px 0 0; color: #64748b; line-height: 1.5; }
+.p5-grid { display: grid; grid-template-columns: minmax(0, 1fr) 300px; gap: 18px; align-items: start; }
+.p5-grid > .ui-card { min-width: 0; }
+.p5-grid .ui-card { padding: 18px; }
+.p5-grid aside { display: grid; gap: 18px; min-width: 0; }
+.p5-grid h2 { font-size: 15px; margin: 0 0 12px; color: #0f172a; }
+.p5-toolbar { display: flex; gap: 12px; align-items: center; margin-bottom: 16px; }
+.p5-toolbar > :first-child { flex: 1; min-width: 120px; }
+.p5-toolbar select { max-width: 175px; }
+.p5-count { color: #64748b; font-size: 12px; margin: 16px 0 0; }
+.p5-muted { color: #64748b; line-height: 1.6; }
+.p5-empty { padding: 42px 12px; text-align: center; color: #64748b; }
+.p5-empty h3 { font-size: 16px; color: #334155; }
+.p5-notice { border: 1px solid #bbf7d0; color: #166534; padding: 12px; background: #f0fdf4; border-radius: 6px; }
+.p5-page [role="alert"] { margin-bottom: 16px; }
+.p5-actions { display: flex; align-items: center; gap: 4px; white-space: nowrap; }
+.p5-selected { background: #eff6ff; }
+.p5-record-link { border: 0; background: transparent; color: #2563eb; font: inherit; text-decoration: underline; cursor: pointer; padding: 6px 0; }
+.p5-page button:focus-visible, .p5-dialog button:focus-visible { outline: 2px solid #2563eb; outline-offset: 3px; }
+.p5-details { margin: 0; }
+.p5-details > div { padding: 9px 0; border-bottom: 1px solid #f1f5f9; }
+.p5-details dt { font-size: 12px; color: #64748b; }
+.p5-details dd { margin: 3px 0 0; font-size: 14px; overflow-wrap: anywhere; color: #0f172a; }
+.p5-dialog { padding: 0; width: min(780px, calc(100vw - 32px)); max-height: calc(100dvh - 32px); border: 1px solid #e2e8f0; border-radius: 10px; color: #334155; box-shadow: 0 18px 55px #0f172a30; }
+.p5-dialog::backdrop { background: #0f172a70; }
+.p5-dialog form { display: flex; flex-direction: column; max-height: calc(100dvh - 34px); }
+.p5-dialog header { padding: 22px 24px 16px; border-bottom: 1px solid #e2e8f0; }
+.p5-dialog header h2 { font-size: 20px; margin: 0 0 6px; color: #0f172a; }
+.p5-dialog header p { font-size: 14px; margin: 0; color: #64748b; }
+.p5-dialog-content { padding: 18px 24px; overflow-y: auto; }
+.p5-dialog fieldset { border: 0; border-bottom: 1px solid #e2e8f0; padding: 8px 0 20px; margin: 0 0 20px; min-width: 0; }
+.p5-dialog legend { font-size: 14px; font-weight: 700; color: #0f172a; }
+.p5-form-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+.p5-dialog footer { display: flex; flex-shrink: 0; justify-content: flex-end; gap: 10px; padding: 16px 24px; border-top: 1px solid #e2e8f0; }
+.p5-result { background: #f8fafc; padding: 16px; border: 1px solid #cbd5e1; border-radius: 6px; }
+.p5-result h3 { font-size: 16px; margin-top: 0; }
+@media (max-width: 1100px) { .p5-grid { grid-template-columns: minmax(0, 1fr); } .p5-grid aside { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 640px) { .p5-title-row, .p5-toolbar { flex-wrap: wrap; } .p5-grid aside, .p5-form-grid { grid-template-columns: minmax(0, 1fr); } .p5-dialog-content { padding: 16px; } }
+
