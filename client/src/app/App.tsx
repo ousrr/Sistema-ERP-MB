@@ -1,109 +1,39 @@
-import {
-  useState
-} from "react";
+import { ERPLayout } from "../layouts/ERPLayout";
+import { ModuleLayout } from "../layouts/ModuleLayout";
 
-import {
-  ERPLayout
-} from "../layouts/ERPLayout";
+import { PageContainer } from "../shared/layout/PageContainer";
+import { PageHeader } from "../shared/layout/PageHeader";
+import { PageSection } from "../shared/layout/PageSection";
 
-import {
-  ModuleLayout
-} from "../layouts/ModuleLayout";
-
-import {
-  PageContainer
-} from "../shared/layout/PageContainer";
-
-import {
-  BancosBreadcrumbs
-} from "../modules/bancos/common/navigation/BancosBreadcrumbs";
-
-import {
-  BancosNavigationModel,
-  type BancosSection
-} from "../modules/bancos/common/navigation/BancosNavigation.types";
-
-import {
-  BancosPage
-} from "../modules/bancos/features/bancos/pages/BancosPage";
-
-import {
-  CatalogosPage
-} from "../modules/bancos/features/catalogos/pages/CatalogosPage";
-
+import { ModuleTabs } from "../shared/navigation/ModuleTabs";
 
 export function App() {
-
-  const [
-    seccionActiva,
-    setSeccionActiva
-  ] = useState<BancosSection>(
-    "bancos"
-  );
-
-
-  function renderContenido() {
-
-    switch (
-      seccionActiva
-    ) {
-
-      case "catalogos":
-
-        return (
-          <CatalogosPage />
-        );
-
-
-      case "bancos":
-      default:
-
-        return (
-          <BancosPage />
-        );
-    }
-  }
-
-
-  const breadcrumbs =
-    BancosNavigationModel
-      .obtenerBreadcrumbs(
-        seccionActiva
-      );
-
-
   return (
     <ERPLayout>
-
       <ModuleLayout
-        title=
-          "Módulo de Bancos"
-
+        title="Módulo"
         navigation={
-
-          <BancosBreadcrumbs
-            items={
-              breadcrumbs
-            }
-
-            activeKey={
-              seccionActiva
-            }
-
-            onNavigate={
-              setSeccionActiva
-            }
+          <ModuleTabs
+            items={[
+              { label: "Inicio" },
+              { label: "Opción 1" },
+              { label: "Opción 2" },
+              { label: "Configuración" },
+            ]}
           />
-
         }
       >
-
         <PageContainer>
-          {renderContenido()}
+          <PageHeader
+            title="Área de trabajo"
+            description="Aquí se desarrollará el contenido de cada módulo."
+          />
+
+          <PageSection>
+            Contenido de la página
+          </PageSection>
         </PageContainer>
-
       </ModuleLayout>
-
     </ERPLayout>
   );
 }
