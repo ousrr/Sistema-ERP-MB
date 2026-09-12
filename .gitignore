@@ -1,33 +1,59 @@
+# =====================================================
+# ERP - Archivos locales / generados
+# =====================================================
+
 # Dependencias
 node_modules/
+**/node_modules/
+.pnpm-store/
+**/.pnpm-store/
 
-# Variables de entorno
+# Variables de entorno y secretos
 .env
 .env.*
+**/.env
+**/.env.*
 !.env.example
+!**/.env.example
 
-# Compilados
+# Compilados / builds
 dist/
+**/dist/
+dist-tests/
+**/dist-tests/
 build/
+**/build/
+coverage/
+**/coverage/
+.vite/
+**/.vite/
+
+# Bases de datos / datos locales
+server/data/
+*.sqlite
+*.sqlite3
+*.db
 
 # Logs
 *.log
 npm-debug.log*
-pnpm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+pnpm-debug.log*
 
-# Sistema operativo
+# IDE / SO
+.vscode/
+.idea/
 .DS_Store
 Thumbs.db
+desktop.ini
 
-# VS Code
-.vscode/
+# Temporales
+*.tmp
+*.temp
+*.swp
+*.swo
+*~
 
-# Cache
-.cache/
-.temp/
-tmp/
-
-# Testing
-coverage/
+# Reportes locales opcionales
+reports/

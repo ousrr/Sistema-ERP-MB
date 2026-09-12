@@ -1,0 +1,17 @@
+{
+  "name": "sistema-erp",
+  "version": "1.0.0",
+  "private": true,
+  "packageManager": "pnpm@11.25.0",
+  "scripts": {
+    "dev:client": "pnpm --dir client dev",
+    "dev:server": "pnpm --dir server dev",
+    "build:client": "pnpm --dir client build",
+    "build:server": "pnpm --dir server build",
+    "build": "pnpm build:client && pnpm build:server",
+    "typecheck:client": "pnpm --dir client exec tsc --noEmit",
+    "typecheck:server": "pnpm --dir server typecheck",
+    "typecheck:contracts": "pnpm --dir packages/contracts typecheck",
+    "typecheck": "pnpm typecheck:contracts && pnpm typecheck:client && pnpm typecheck:server"
+  }
+}

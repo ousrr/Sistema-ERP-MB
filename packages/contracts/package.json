@@ -1,0 +1,27 @@
+{
+  "name": "@erp/contracts",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "types": "./src/index.ts",
+  "exports": {
+    ".": {
+      "types": "./src/index.ts",
+      "default": "./src/index.ts"
+    },
+    "./common": {
+      "types": "./src/common/index.ts",
+      "default": "./src/common/index.ts"
+    },
+    "./bancos": {
+      "types": "./src/bancos/index.ts",
+      "default": "./src/bancos/index.ts"
+    }
+  },
+  "scripts": {
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "typescript": "^7.0.2"
+  }
+}
