@@ -1,0 +1,361 @@
+.mb-responsive-page {
+  width: 100%;
+  min-width: 0;
+
+  display: grid;
+  gap: 28px;
+
+  padding-top: 4px;
+}
+
+
+/* =====================================================
+   ENCABEZADO
+===================================================== */
+
+.mb-responsive-header {
+  min-width: 0;
+}
+
+
+.mb-responsive-header__title {
+  margin: 0 0 8px;
+
+  color: #101828;
+
+  font-size: clamp(24px, 3vw, 29px);
+  font-weight: 700;
+  line-height: 1.2;
+
+  overflow-wrap: anywhere;
+}
+
+
+.mb-responsive-header__description {
+  max-width: 920px;
+
+  margin: 0;
+
+  color: #667085;
+
+  font-size: 14px;
+  line-height: 1.6;
+
+  overflow-wrap: anywhere;
+}
+
+
+/* =====================================================
+   TOOLBAR
+===================================================== */
+
+.mb-responsive-toolbar {
+  min-width: 0;
+
+  display: grid;
+  grid-template-columns:
+    minmax(260px, 360px)
+    minmax(260px, 1fr)
+    auto;
+
+  align-items: center;
+  gap: 20px;
+}
+
+
+.mb-responsive-toolbar__item {
+  min-width: 0;
+}
+
+
+.mb-responsive-toolbar__item--search > * {
+  width: 100%;
+  max-width: none;
+}
+
+
+.mb-responsive-toolbar__item--action {
+  justify-self: end;
+}
+
+
+.mb-responsive-toolbar__item--action > * {
+  white-space: nowrap;
+}
+
+
+/* =====================================================
+   CAMPO
+===================================================== */
+
+.mb-responsive-field {
+  min-width: 0;
+
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+
+  align-items: center;
+  gap: 18px;
+}
+
+
+.mb-responsive-field__label {
+  color: #344054;
+
+  font-size: 14px;
+  font-weight: 600;
+}
+
+
+.mb-responsive-field__control {
+  min-width: 0;
+}
+
+
+.mb-responsive-field__control > * {
+  width: 100%;
+  max-width: none;
+}
+
+
+/* =====================================================
+   PANEL INFORMATIVO
+===================================================== */
+
+.mb-responsive-info {
+  min-width: 0;
+
+  display: grid;
+  grid-template-columns:
+    minmax(0, 1fr)
+    minmax(0, 1fr);
+
+  gap: 36px;
+
+  padding: 22px 24px;
+
+  border: 1px solid #84caff;
+  border-radius: 11px;
+
+  background: #f5faff;
+}
+
+
+.mb-responsive-info__section {
+  min-width: 0;
+}
+
+
+.mb-responsive-info__section p,
+.mb-responsive-info__section span,
+.mb-responsive-info__section strong {
+  overflow-wrap: anywhere;
+}
+
+
+/* =====================================================
+   TABLA
+===================================================== */
+
+.mb-responsive-table-scroll {
+  width: 100%;
+  min-width: 0;
+
+  overflow-x: auto;
+  overscroll-behavior-inline: contain;
+
+  border-radius: 10px 10px 0 0;
+
+  scrollbar-width: thin;
+}
+
+
+.mb-responsive-table-scroll > * {
+  min-width:
+    var(
+      --mb-table-min-width,
+      840px
+    );
+}
+
+
+/*
+  DataTable puede renderizar directamente <table>
+  o envolverlo. Cubrimos ambos casos sin modificar shared.
+*/
+.mb-responsive-table-scroll table {
+  width: 100%;
+  min-width:
+    var(
+      --mb-table-min-width,
+      840px
+    );
+}
+
+
+/* =====================================================
+   PIE DE TABLA
+===================================================== */
+
+.mb-responsive-footer {
+  min-width: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 16px;
+
+  min-height: 72px;
+
+  padding: 14px 18px;
+
+  border: 1px solid #eaecf0;
+  border-top: 0;
+  border-radius: 0 0 10px 10px;
+
+  background: #ffffff;
+}
+
+
+.mb-responsive-footer__actions {
+  min-width: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+
+  gap: 10px;
+
+  flex-wrap: wrap;
+}
+
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (
+  max-width: 1050px
+) {
+
+  .mb-responsive-toolbar {
+    grid-template-columns:
+      minmax(0, 1fr)
+      minmax(0, 1fr);
+  }
+
+
+  .mb-responsive-toolbar__item--action {
+    grid-column: 1 / -1;
+
+    justify-self: stretch;
+  }
+
+
+  .mb-responsive-toolbar__item--action > * {
+    width: 100%;
+  }
+
+
+  .mb-responsive-info {
+    grid-template-columns: 1fr;
+
+    gap: 24px;
+  }
+}
+
+
+/* =====================================================
+   MÓVIL / TABLET PEQUEÑA
+===================================================== */
+
+@media (
+  max-width: 720px
+) {
+
+  .mb-responsive-page {
+    gap: 20px;
+  }
+
+
+  .mb-responsive-toolbar {
+    grid-template-columns: 1fr;
+
+    gap: 14px;
+  }
+
+
+  .mb-responsive-toolbar__item--action {
+    grid-column: auto;
+  }
+
+
+  .mb-responsive-field {
+    grid-template-columns: 1fr;
+
+    gap: 8px;
+  }
+
+
+  .mb-responsive-info {
+    gap: 20px;
+
+    padding: 18px;
+  }
+
+
+  .mb-responsive-footer {
+    align-items: flex-start;
+
+    flex-direction: column;
+  }
+
+
+  .mb-responsive-footer__actions {
+    width: 100%;
+
+    justify-content: space-between;
+  }
+}
+
+
+/* =====================================================
+   MÓVIL
+===================================================== */
+
+@media (
+  max-width: 520px
+) {
+
+  .mb-responsive-header__description {
+    font-size: 13px;
+  }
+
+
+  .mb-responsive-info {
+    padding: 16px;
+  }
+
+
+  .mb-responsive-footer__actions {
+    align-items: stretch;
+
+    flex-direction: column;
+  }
+
+
+  .mb-responsive-footer__actions > * {
+    width: 100%;
+  }
+
+
+  .mb-responsive-footer__actions button {
+    width: 100%;
+  }
+
+
+  .mb-responsive-footer__actions select {
+    width: 100%;
+  }
+}
