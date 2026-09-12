@@ -98,7 +98,7 @@ const cuentasMovimientos: ItemMenu[] = [
     id: "cuentas",
     label: "Cuentas bancarias",
     ruta: "/bancos/cuentas",
-    disponible: false,
+    disponible: true,
   },
 
   {
@@ -117,7 +117,7 @@ const pagosAutorizados: ItemMenu[] = [
       "Cuentas bancarias de proveedores",
     ruta:
       "/bancos/pagos/cuentas-proveedor",
-    disponible: false,
+    disponible: true,
   },
 ];
 
@@ -128,7 +128,7 @@ const configuracionAuditoria: ItemMenu[] = [
     label: "Bancos",
     ruta:
       "/bancos/configuracion/catalogos/bancos",
-    disponible: false,
+    disponible: true,
   },
 
   {
@@ -137,7 +137,7 @@ const configuracionAuditoria: ItemMenu[] = [
       "Catálogos bancarios",
     ruta:
       "/bancos/configuracion/catalogos/bancarios",
-    disponible: false,
+    disponible: true,
   },
 
   {
@@ -146,7 +146,7 @@ const configuracionAuditoria: ItemMenu[] = [
       "Formatos de importación",
     ruta:
       "/bancos/configuracion/catalogos/formatos-importacion",
-    disponible: false,
+    disponible: true,
   },
 
   {
@@ -155,7 +155,7 @@ const configuracionAuditoria: ItemMenu[] = [
       "Reglas de aprobación",
     ruta:
       "/bancos/configuracion/catalogos/reglas-aprobacion",
-    disponible: false,
+    disponible: true,
   },
 
   {
@@ -173,7 +173,7 @@ const configuracionAuditoria: ItemMenu[] = [
       "Parámetros de conciliación",
     ruta:
       "/bancos/configuracion/parametros-conciliacion",
-    disponible: false,
+    disponible: true,
   },
 
   {

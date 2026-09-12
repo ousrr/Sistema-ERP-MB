@@ -8,7 +8,7 @@ import type {
 } from "../types/chequera.types";
 
 const CHEQUERAS_API_URL =
-  "http://localhost:3000/api/bancos/chequeras";
+  "/api/v1/bancos/chequeras";
 
 async function procesarRespuesta<T>(
   response: Response

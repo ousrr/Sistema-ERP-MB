@@ -35,7 +35,6 @@ import {
 } from "../api/chequeras.api";
 
 import { ChequeraCreateModal } from "../components/ChequeraCreateModal";
-import { BancosChequerasSidebar } from "../components/BancosChequerasSidebar";
 
 import type {
   Chequera,
@@ -648,7 +647,6 @@ export function ChequerasPage() {
 
   return (
     <>
-      <BancosChequerasSidebar />
 
       <PageContainer>
         <section className="chequeras-screen">

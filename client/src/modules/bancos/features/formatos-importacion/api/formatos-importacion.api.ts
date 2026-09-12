@@ -7,7 +7,7 @@ import type {
 } from "../types/formatos-importacion.types";
 
 const API_BASE =
-  "http://localhost:3001/api/bancos/formatos-importacion";
+  "/api/v1/bancos/formatos-importacion";
 
 type ApiResponse<T> = {
   success: boolean;

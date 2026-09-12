@@ -1,10 +1,10 @@
 import type { Catalogs, Row } from "./types";
 
-const base = (import.meta as ImportMeta & { env: Record<string, string | undefined> }).env.VITE_API_URL ?? "http://localhost:3000";
+const base = (import.meta as ImportMeta & { env: Record<string, string | undefined> }).env.VITE_API_URL ?? "";
 async function request<T>(key: string, path = "", method = "GET", data?: Row, signal?: AbortSignal): Promise<T> {
   let response: Response;
   try {
-    response = await fetch(base + "/api/bancos/" + key + path, {
+    response = await fetch(base + "/api/v1/bancos/" + key + path, {
       method, signal, headers: { "Content-Type": "application/json" },
       ...(data ? { body: JSON.stringify(data) } : {}),
     });

@@ -11,7 +11,7 @@ import type {
 } from "../types/plantilla-cheque.types";
 
 const PLANTILLAS_API_URL =
-  "http://localhost:3000/api/bancos/plantillas-cheque";
+  "/api/v1/bancos/plantillas-cheque";
 
 
 async function procesarRespuesta<T>(
