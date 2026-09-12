@@ -1,0 +1,932 @@
+/* =========================================================
+   CUENTAS BANCARIAS
+   Estilos locales de la feature.
+   No modifica los componentes globales del ERP.
+========================================================= */
+
+
+.cuentas-page {
+  width: 100%;
+}
+
+
+/* =========================================================
+   RESUMEN
+========================================================= */
+
+.cuentas-summary {
+  display: grid;
+
+  grid-template-columns:
+    repeat(
+      4,
+      minmax(0, 1fr)
+    );
+
+  gap: var(--erp-space-3);
+
+  margin-bottom:
+    var(--erp-space-5);
+}
+
+
+.cuentas-summary-card {
+  min-width: 0;
+}
+
+
+.cuentas-summary-card .ui-card {
+  position: relative;
+
+  min-height: 112px;
+
+  display: flex;
+  align-items: center;
+
+  overflow: hidden;
+
+  padding:
+    var(--erp-space-4);
+
+  transition:
+    transform 0.15s ease,
+    box-shadow 0.15s ease,
+    border-color 0.15s ease;
+}
+
+
+.cuentas-summary-card .ui-card:hover {
+  transform:
+    translateY(-2px);
+
+  box-shadow:
+    0 8px 22px
+    rgba(15, 23, 42, 0.07);
+}
+
+
+.cuentas-summary-card__content {
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+
+  gap:
+    var(--erp-space-3);
+}
+
+
+.cuentas-summary-card__icon {
+  width: 42px;
+  height: 42px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  border-radius:
+    var(--erp-radius-md);
+}
+
+
+.cuentas-summary-card__body {
+  min-width: 0;
+
+  display: flex;
+  flex-direction: column;
+
+  gap:
+    3px;
+}
+
+
+.cuentas-summary-card__label {
+  color:
+    var(--erp-color-muted);
+
+  font-size: 12px;
+  font-weight: 500;
+}
+
+
+.cuentas-summary-card__value {
+  color:
+    var(--erp-color-text);
+
+  font-size: 25px;
+  font-weight: 700;
+
+  line-height: 1.1;
+}
+
+
+.cuentas-summary-card__helper {
+  color:
+    #94a3b8;
+
+  font-size: 11px;
+}
+
+
+/* TOTAL */
+
+.cuentas-summary-card--total
+  .cuentas-summary-card__icon {
+
+  background:
+    #eff6ff;
+
+  color:
+    var(--erp-color-primary);
+}
+
+
+.cuentas-summary-card--total
+  .ui-card {
+
+  border-color:
+    #dbeafe;
+}
+
+
+/* ACTIVAS */
+
+.cuentas-summary-card--active
+  .cuentas-summary-card__icon {
+
+  background:
+    #ecfdf3;
+
+  color:
+    #047857;
+}
+
+
+.cuentas-summary-card--active
+  .ui-card {
+
+  border-color:
+    #d1fae5;
+}
+
+
+/* BORRADOR */
+
+.cuentas-summary-card--draft
+  .cuentas-summary-card__icon {
+
+  background:
+    #fffbeb;
+
+  color:
+    #b45309;
+}
+
+
+.cuentas-summary-card--draft
+  .ui-card {
+
+  border-color:
+    #fde68a;
+}
+
+
+/* INACTIVAS / CERRADAS */
+
+.cuentas-summary-card--inactive
+  .cuentas-summary-card__icon {
+
+  background:
+    #f1f5f9;
+
+  color:
+    #64748b;
+}
+
+
+/* =========================================================
+   BANNER INFORMATIVO
+========================================================= */
+
+.cuentas-info {
+  margin-bottom:
+    var(--erp-space-4);
+}
+
+
+.cuentas-info .feedback-alert {
+  display: flex;
+  align-items: flex-start;
+
+  gap:
+    var(--erp-space-3);
+
+  border-color:
+    #bfdbfe;
+
+  background:
+    #eff6ff;
+
+  color:
+    #1e40af;
+}
+
+
+.cuentas-info__icon {
+  width: 24px;
+  height: 24px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  flex: 0 0 auto;
+
+  margin-top: 1px;
+
+  border-radius: 50%;
+
+  background:
+    var(--erp-color-primary);
+
+  color:
+    #ffffff;
+}
+
+
+.cuentas-info__content {
+  min-width: 0;
+}
+
+
+.cuentas-info__content strong {
+  display: block;
+
+  margin-bottom: 2px;
+
+  font-size: 13px;
+}
+
+
+.cuentas-info__content p {
+  margin: 0;
+
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+
+/* =========================================================
+   TARJETA PRINCIPAL
+========================================================= */
+
+.cuentas-table-card .ui-card {
+  padding: 0;
+
+  overflow: hidden;
+}
+
+
+/* =========================================================
+   TOOLBAR
+========================================================= */
+
+.cuentas-toolbar {
+  display: flex;
+  align-items: center;
+
+  gap:
+    var(--erp-space-2);
+
+  padding:
+    var(--erp-space-4);
+
+  border-bottom:
+    1px solid
+    var(--erp-color-border);
+}
+
+
+.cuentas-toolbar__search {
+  min-width: 220px;
+
+  flex:
+    1 1 360px;
+}
+
+
+.cuentas-toolbar__filter {
+  width: 190px;
+
+  flex:
+    0 0 190px;
+}
+
+
+.cuentas-toolbar__actions {
+  display: flex;
+  align-items: center;
+
+  flex-shrink: 0;
+
+  gap:
+    var(--erp-space-2);
+}
+
+
+/* =========================================================
+   MENSAJES
+========================================================= */
+
+.cuentas-message {
+  margin:
+    var(--erp-space-4);
+}
+
+
+.cuentas-message--error {
+  padding:
+    12px 14px;
+
+  border:
+    1px solid #fecaca;
+
+  border-radius:
+    var(--erp-radius-md);
+
+  background:
+    #fef2f2;
+
+  color:
+    #b91c1c;
+
+  font-size: 12px;
+}
+
+
+.cuentas-loading {
+  padding:
+    42px
+    var(--erp-space-5);
+
+  color:
+    var(--erp-color-muted);
+
+  text-align: center;
+}
+
+
+/* =========================================================
+   TABLA
+========================================================= */
+
+.cuentas-table-card .table-shell {
+  border: 0;
+  border-radius: 0;
+}
+
+
+.cuentas-table-card .data-table th {
+  background:
+    #f8fafc;
+
+  color:
+    #64748b;
+
+  font-size: 10.5px;
+  font-weight: 700;
+}
+
+
+.cuentas-table-card .data-table td {
+  vertical-align: middle;
+}
+
+
+.cuentas-table-card
+  .data-table
+  tbody
+  tr {
+
+  transition:
+    background-color 0.12s ease;
+}
+
+
+.cuentas-bank {
+  display: flex;
+  align-items: center;
+
+  gap:
+    9px;
+}
+
+
+.cuentas-bank__icon {
+  width: 30px;
+  height: 30px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  flex:
+    0 0 auto;
+
+  border-radius:
+    8px;
+
+  background:
+    #eff6ff;
+
+  color:
+    var(--erp-color-primary);
+}
+
+
+.cuentas-bank__data {
+  min-width: 0;
+
+  display: flex;
+  flex-direction: column;
+
+  gap:
+    2px;
+}
+
+
+.cuentas-bank__code {
+  color:
+    #0f172a;
+
+  font-size: 13px;
+  font-weight: 700;
+}
+
+
+.cuentas-bank__name {
+  overflow: hidden;
+
+  color:
+    #94a3b8;
+
+  font-size: 10px;
+
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+
+.cuentas-number {
+  color:
+    #334155;
+
+  font-size: 13px;
+  font-weight: 600;
+
+  letter-spacing:
+    0.03em;
+
+  white-space: nowrap;
+}
+
+
+.cuentas-name {
+  min-width: 180px;
+
+  color:
+    #334155;
+
+  font-weight: 500;
+}
+
+
+.cuentas-usage {
+  color:
+    #475569;
+
+  white-space: nowrap;
+}
+
+
+/* =========================================================
+   ESTADOS
+========================================================= */
+
+.cuentas-status .ui-badge {
+  border: 0;
+
+  padding:
+    5px
+    10px;
+}
+
+
+/* ACTIVA */
+
+.cuentas-status--activa
+  .ui-badge {
+
+  background:
+    #dcfce7;
+
+  color:
+    #15803d;
+}
+
+
+/* BORRADOR */
+
+.cuentas-status--borrador
+  .ui-badge {
+
+  background:
+    #fef3c7;
+
+  color:
+    #b45309;
+}
+
+
+/* INACTIVA */
+
+.cuentas-status--inactiva
+  .ui-badge {
+
+  background:
+    #f1f5f9;
+
+  color:
+    #64748b;
+}
+
+
+/* CERRADA */
+
+.cuentas-status--cerrada
+  .ui-badge {
+
+  background:
+    #fee2e2;
+
+  color:
+    #b91c1c;
+}
+
+
+/* =========================================================
+   ACCIONES
+========================================================= */
+
+.cuentas-actions {
+  display: flex;
+  align-items: center;
+
+  gap:
+    6px;
+}
+
+
+.cuentas-actions
+  .ui-icon-button {
+
+  width: 32px;
+  height: 32px;
+
+  border-color:
+    #dbeafe;
+
+  color:
+    #2563eb;
+}
+
+
+.cuentas-actions
+  .ui-icon-button:hover:not(:disabled) {
+
+  border-color:
+    #93c5fd;
+
+  background:
+    #eff6ff;
+
+  color:
+    #1d4ed8;
+}
+
+
+.cuentas-actions
+  .ui-icon-button:disabled {
+
+  border-color:
+    #e2e8f0;
+
+  background:
+    #f8fafc;
+
+  color:
+    #94a3b8;
+
+  cursor:
+    not-allowed;
+
+  opacity:
+    0.55;
+}
+
+
+/* =========================================================
+   PIE DE TABLA
+========================================================= */
+
+.cuentas-table-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap:
+    var(--erp-space-4);
+
+  padding:
+    13px
+    var(--erp-space-4);
+
+  border-top:
+    1px solid
+    var(--erp-color-border);
+
+  background:
+    #ffffff;
+}
+
+
+.cuentas-result-count {
+  color:
+    var(--erp-color-muted);
+
+  font-size: 11px;
+}
+
+
+/* =========================================================
+   DETALLE DE CUENTA
+========================================================= */
+
+.cuentas-detail {
+  margin-top:
+    var(--erp-space-4);
+}
+
+
+.cuentas-detail .ui-card {
+  padding:
+    var(--erp-space-5);
+
+  border-color:
+    #dbeafe;
+
+  box-shadow:
+    0 8px 24px
+    rgba(15, 23, 42, 0.05);
+}
+
+
+.cuentas-detail__header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+
+  gap:
+    var(--erp-space-4);
+
+  margin-bottom:
+    var(--erp-space-5);
+}
+
+
+.cuentas-detail__eyebrow {
+  display: block;
+
+  margin-bottom:
+    4px;
+
+  color:
+    var(--erp-color-primary);
+
+  font-size: 11px;
+  font-weight: 700;
+
+  text-transform:
+    uppercase;
+
+  letter-spacing:
+    0.05em;
+}
+
+
+.cuentas-detail__title {
+  margin:
+    0
+    0
+    4px;
+
+  color:
+    #0f172a;
+
+  font-size:
+    18px;
+  font-weight:
+    700;
+}
+
+
+.cuentas-detail__subtitle {
+  margin: 0;
+
+  color:
+    var(--erp-color-muted);
+
+  font-size:
+    12px;
+}
+
+
+.cuentas-detail__grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(
+      4,
+      minmax(0, 1fr)
+    );
+
+  gap:
+    var(--erp-space-4);
+}
+
+
+.cuentas-detail__item {
+  min-width: 0;
+
+  padding:
+    12px;
+
+  border:
+    1px solid
+    #eef2f7;
+
+  border-radius:
+    var(--erp-radius-md);
+
+  background:
+    #fbfdff;
+}
+
+
+.cuentas-detail__label {
+  display: block;
+
+  margin-bottom:
+    5px;
+
+  color:
+    #94a3b8;
+
+  font-size:
+    10px;
+  font-weight:
+    600;
+
+  text-transform:
+    uppercase;
+
+  letter-spacing:
+    0.04em;
+}
+
+
+.cuentas-detail__value {
+  overflow-wrap:
+    anywhere;
+
+  color:
+    #334155;
+
+  font-size:
+    13px;
+  font-weight:
+    600;
+}
+
+
+.cuentas-detail__observations {
+  margin-top:
+    var(--erp-space-4);
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (
+  max-width: 1200px
+) {
+
+  .cuentas-summary {
+    grid-template-columns:
+      repeat(
+        2,
+        minmax(0, 1fr)
+      );
+  }
+
+
+  .cuentas-detail__grid {
+    grid-template-columns:
+      repeat(
+        3,
+        minmax(0, 1fr)
+      );
+  }
+}
+
+
+@media (
+  max-width: 900px
+) {
+
+  .cuentas-toolbar {
+    flex-wrap: wrap;
+  }
+
+
+  .cuentas-toolbar__search {
+    flex-basis: 100%;
+  }
+
+
+  .cuentas-toolbar__filter {
+    flex:
+      1 1 180px;
+
+    width: auto;
+  }
+
+
+  .cuentas-detail__grid {
+    grid-template-columns:
+      repeat(
+        2,
+        minmax(0, 1fr)
+      );
+  }
+}
+
+
+@media (
+  max-width: 640px
+) {
+
+  .cuentas-summary {
+    grid-template-columns:
+      1fr;
+  }
+
+
+  .cuentas-toolbar__filter {
+    flex-basis:
+      100%;
+  }
+
+
+  .cuentas-toolbar__actions {
+    width: 100%;
+  }
+
+
+  .cuentas-toolbar__actions
+    .ui-button {
+
+    flex: 1;
+  }
+
+
+  .cuentas-table-footer {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+
+  .cuentas-detail__grid {
+    grid-template-columns:
+      1fr;
+  }
+
+
+  .cuentas-detail__header {
+    align-items: flex-start;
+  }
+}
